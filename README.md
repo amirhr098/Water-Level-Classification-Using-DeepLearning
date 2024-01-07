@@ -1,7 +1,8 @@
 # Water Level Classification Using DeepLearning
 
-This file contains code for a deep learning model that classifies images into three categories: "A", "B", and "C". The model uses the Sobel filter and a sum of intensity values to extract features from the input images and trains a multi-input model to classify the images based on these features.
+This repository contains code for a deep learning model that classifies images into three categories: "A", "B", and "C". The model uses the Sobel filter and a sum of intensity values to extract features from the input images and trains a multi-input model to classify the images based on these features.
 
+You can find related images of each category in the Dataset folder.
 ## Requirements
 
 + NumPy
@@ -24,7 +25,7 @@ This file contains code for a deep learning model that classifies images into th
 
 + input1 and input2: Two inputs to the deep learning model, representing the gradient in the y-direction and the sum of intensities in each row, respectively.
 
-+ tower_1 and tower_2: Two branches of the deep learning model that extract features from the inputs input1 and input2, respectively.
++ tower_1 and tower_2: Two branches of the deep learning model that extract features from input1 and input2, respectively.
 
 + merged: A combination of the features from tower_1 and tower_2 that are then passed to the output layer to make the final prediction.
 
@@ -34,10 +35,12 @@ The script assumes you have a directory named "Dataset" containing 3 subdirector
 
 The script starts by performing a Sobel Edge detection on each image and stores the result in two arrays, X1 and X2. X1 stores the Sobel image, while X2 stores the sum of the Sobel image for each row.
 
-Next, it trains a neural network with two inputs, input1 and input2, that are then processed in two towers (tower_1 and tower_2) which are then concatenated and used as the final prediction. The output layer has 3 units and uses a softmax activation function. The model is then trained on the X1 and X2 arrays with their corresponding class labels Y.
+Next, it trains a neural network with two inputs, input1 and input2, that are then processed in two towers (tower_1 and tower_2) concatenated and used as the final prediction. The output layer has 3 units and uses a softmax activation function. The model is then trained on the X1 and X2 arrays with corresponding class labels Y.
 
 The script ends by plotting the model using plot_model.
 
 ## Conclusion
 
-This script performs a Sobel Edge detection on images, trains a neural network for image classification and plots the model architecture. It provides a starting point for further development or modifications for your own image classification tasks.
+This script performs a Sobel Edge detection on images, trains a neural network for image classification, and plots the model architecture. It provides a starting point for further development or modifications for your image classification tasks.
+Have fun:)
+
